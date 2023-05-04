@@ -33,3 +33,8 @@ limit 3;
 SELECT name, price
 FROM Camping_Store
 ORDER BY price asc;
+
+--what items have the most quantities?
+SELECT name, quantity
+FROM Camping_Store
+ORDER BY quantity desc;
