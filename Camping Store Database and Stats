@@ -1,5 +1,3 @@
-#In this SQL, I practice making a store database that helped me understand SQL better.
-
 --Create a camping store database.
 
 Create table Camping_Store (id integer primary key, name text, quantity integer, price integer, popularity integer);
