@@ -1,0 +1,35 @@
+#In this SQL, I practice making a store database that helped me understand SQL better.
+
+--Create a camping store database.
+
+Create table Camping_Store (id integer primary key, name text, quantity integer, price integer, popularity integer);
+
+INSERT INTO Camping_Store values
+(1, "Fire Starter", 50, 3, 10),
+(2, "Sleeping Bag", 5, 20, 5),
+(3, "Canteen", 10, 5, 3),
+(4, "MRE", 50, 15, 10),
+(5, "Hiking Boots", 12, 100, 7),
+(6, "Flare", 20, 13, 6),
+(7, "Waterproof Matches", 50, 7, 9),
+(8, "Utensils", 25, 6, 4);
+
+--displays the database ordered by price descending.
+SELECT * FROM Camping_Store
+ORDER BY price desc;
+
+--displays the average price of popularity items with 10.
+SELECT AVG(price) "avg 10 popularity item price"
+FROM Camping_Store
+WHERE popularity=10;
+
+--displays the most 3 popular item.
+SELECT name, price, popularity
+FROM Camping_Store
+ORDER BY popularity desc
+limit 3;
+
+--displays the cheapest items first.
+SELECT name, price
+FROM Camping_Store
+ORDER BY price asc;
