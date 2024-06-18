@@ -31,10 +31,6 @@ SELECT price, item_name
 FROM superstore
 ORDER BY item_name;
 
-SELECT SUM(price), item_name
-FROM superstore
-GROUP BY item_name;
-
 SELECT SUM(price), category
 FROM superstore
 GROUP BY category;
