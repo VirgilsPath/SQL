@@ -25,22 +25,37 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-
-
-SELECT price, item_name
+--Query to Retrieve All Items in the "Electronics" Category:
+SELECT item_id, item_name, price, stock_quantity, average_rating
 FROM superstore
-ORDER BY item_name;
+WHERE category = 'Electronics';
 
-SELECT SUM(price), category
+--Query to Find Items with a Stock Quantity Less Than 30:
+SELECT item_id, item_name, category, stock_quantity
 FROM superstore
-GROUP BY category;
+WHERE stock_quantity < 30;
 
-#Adding the sum of prices that match the category "Kitchen Supplies"
+--Query to Calculate the Average Price of Items in the "Kitchen Supplies" Category:
+SELECT AVG(price) AS average_price
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+--Adding the sum of prices that match the category "Kitchen Supplies":
 SELECT SUM(price), category
 FROM superstore
 WHERE category="Kitchen Supplies";
 
-#Looking up the amount of "Air Purifiers" in stock
+--Looking up the amount of "Air Purifiers" in stock:
 SELECT stock_quantity, item_name
 FROM superstore
 WHERE item_name="Air Purifier";
+
+--Query to Retrieve Items with an Average Rating Above 4.5:
+SELECT item_id, item_name, category, average_rating
+FROM superstore
+WHERE average_rating > 4.5;
+
+--Query to List All Items Sorted by Price in Descending Order:
+SELECT item_id, item_name, category, price
+FROM superstore
+ORDER BY price DESC;
